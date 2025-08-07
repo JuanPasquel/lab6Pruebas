@@ -2,7 +2,7 @@ export default [
     {
         files: ['**/*.js'],
         languageOptions: {
-            ecmaVersion: 'latest',
+            ecmaVersion: 2020,
             sourceType: 'module',
         },
         rules: {
@@ -11,5 +11,3 @@ export default [
         },
     },
 ];
-
-  
