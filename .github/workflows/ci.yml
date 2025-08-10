@@ -1,34 +1,13 @@
-name: CI/CD Workflow
+mkdir -p .github/workflows
+cat > .github/workflows/ci.yml <<'YAML'
+name: Hola Mundo
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: push
 
 jobs:
-  build-and-test:
+  ejemplo:
     runs-on: ubuntu-latest
     steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Lint del código
-        run: npm run lint
-
-      - name: Ejecutar pruebas
-        run: npm test
-
-      - name: Simular despliegue
-        run: |
-          echo "Despliegue simulado exitosamente: La aplicación pasó"
-          echo "Variables de entorno:"
-          echo "Lint y pruebas ejecutadas correctamente"
+      - name: Imprimir saludo
+        run: echo "¡Hola desde GitHub Actions!"
+YAML
